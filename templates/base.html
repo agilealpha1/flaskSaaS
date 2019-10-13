@@ -1,0 +1,23 @@
+<html>
+  <head>
+    {% if title %}
+    <title>{{ title }} - HK MaaS </title>
+    {% else %}
+    <title>Flask app samaple</title>
+    {% endif %}
+  </head>
+  <body>
+    <div>MaaS Service: <a href="/index">Home</a></div>
+    <hr>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <li>{{ message }} </li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </body>
+</html>
